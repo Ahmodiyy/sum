@@ -18,7 +18,7 @@
         }
         stage("Code Coverage") {
             steps {
-                sh "./gradlew jacocoTestReport"
+                bat "./gradlew jacocoTestReport"
                 publishHTML(target: [
                     allowMissing: false,
                     alwaysLinkToLastBuild: false,
@@ -27,7 +27,7 @@
                     reportF:iles: 'index.html',
                     reportName: 'JaCoCo Report'
                 ])
-                sh "./gradlew jacocoTestCoverageVerification"
+                bat "./gradlew jacocoTestCoverageVerification"
             }
         }
     }
