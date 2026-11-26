@@ -16,5 +16,19 @@
                 bat "./gradlew test"
             }
         }
+        stage("Code Coverage") {
+            steps {
+                sh "./gradlew jacocoTestReport"
+                publishHTML(target: [
+                    allowMissing: false,
+                    alwaysLinkToLastBuild: false,
+                    keepAll: true,
+                    reportDir: 'build/reports/jacoco/test/html',
+                    reportF:iles: 'index.html',
+                    reportName: 'JaCoCo Report'
+                ])
+                sh "./gradlew jacocoTestCoverageVerification"
+            }
+        }
     }
 }
