@@ -24,7 +24,7 @@
                     alwaysLinkToLastBuild: false,
                     keepAll: true,
                     reportDir: 'build/reports/jacoco/test/html',
-                    reportF:iles: 'index.html',
+                    reportFiles: 'index.html',
                     reportName: 'JaCoCo Report'
                 ])
                 bat "./gradlew jacocoTestCoverageVerification"
